@@ -1,0 +1,29 @@
+{
+  "addons": [
+    {
+      "plan": "heroku-postgresql"
+    },
+    {
+      "plan": "papertrail"
+    }
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/ruby"
+    }
+  ],
+  "env": {
+    "WEB_CONCURRENCY": {
+      "description": "Number of Puma workers to spawn per web process.",
+      "required": false
+    },
+    "RAILS_MIN_THREADS": {
+      "description": "Minimum number of threads to use per Puma worker.",
+      "required": false
+    },
+    "RAILS_MAX_THREADS": {
+      "description": "Maximum number of threads to use per Puma worker.",
+      "required": false
+    }
+  }
+}

@@ -1,0 +1,43 @@
+PreCommit:
+  # Ensure no Gems with known vulnerabilities are committed
+  BundleAudit:
+    enabled: true
+
+  # Get warnings if new versions of Gems are available
+  BundleOutdated:
+    enabled: true
+
+  # Lint against changed files only
+  RuboCop:
+    enabled: true
+    command: ['bundle', 'exec', 'rubocop']
+    on_warn: fail # Treat all warnings as failures
+
+  # Ensure file execution permissions are correctly set
+  ExecutePermissions:
+    enabled: true
+    exclude:
+      - 'bin/*'
+
+  # Don't commit TODO, FIXME, etc.
+  FixMe:
+    enabled: true
+
+  # Ensure files end with a newline (to be POSIX-compliant)
+  TrailingWhitespace:
+    enabled: true
+
+  # Don't accidentally commit locally to master
+  ForbiddenBranches:
+    enabled: true
+    branch_patterns: ['master']
+
+PrePush:
+  # Ensure all tests pass before pushing
+  RSpec:
+    enabled: true
+
+PostMerge:
+  # Automatically install new dependencies when the Gemfile.lock changes
+  BundleInstall:
+    enabled: true

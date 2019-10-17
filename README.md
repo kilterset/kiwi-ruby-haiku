@@ -7,3 +7,8 @@ To set up your environment locally, clone this repository, `cd` into it, and run
 To start a local development server:
 
     bin/rails server
+
+To run tests:
+
+    bin/rspec
+

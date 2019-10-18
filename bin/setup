@@ -1,4 +1,6 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
+
 require 'fileutils'
 
 # path to your application root.
@@ -26,12 +28,16 @@ FileUtils.chdir APP_ROOT do
   puts "\n== Restarting application server =="
   system! 'bin/rails restart'
 
+  puts "\n== Installing git hooks =="
+  system! 'overcommit --install'
+  puts 'You can uninstall this with `overcommit --uninstall`'
+
   puts <<~INSTRUCTIONS
-  ==> You're good to go
+    ==> You're good to go
 
-      To start a local server, run:
+        To start a local server, run:
 
-          bin/rails server
+            bin/rails server
 
   INSTRUCTIONS
 end

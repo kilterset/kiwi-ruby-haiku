@@ -13,8 +13,13 @@
     <%= link_to root_url, class: 'header' do %>
       <%= image_tag 'kiwi-ruby-logo.svg', alt: 'Kiwi Ruby Logo', class: 'kiwi-ruby-logo' %>
       <span class="app-name"><%= app_name %></span>
-      <%= image_tag 'trineo-logo.svg', alt: 'Trineo Logo', class: 'trineo-logo'  %>
+      <%= image_tag 'trineo-logo.svg', alt: 'Trineo Logo', class: 'trineo-logo' %>
     <% end %>
+
+    <nav>
+      <%= link_to_unless_current "Write", new_submission_path %>
+      <%= link_to_unless_current "Read", submissions_path %>
+    </nav>
 
     <%= yield %>
 

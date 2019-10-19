@@ -7,6 +7,11 @@ class SubmissionsController < ApplicationController
 
   def create
     @submission = Submission.create(submission_params)
+    redirect_to new_submission_path unless @submission.persisted?
+  end
+
+  def index
+    @submissions = Submission.all.order(created_at: :desc)
   end
 
   private

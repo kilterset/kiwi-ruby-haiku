@@ -5,7 +5,17 @@ $grey: #999;
 $dark-grey: #424242;
 $spacing: 0.5rem;
 
-body, input, textarea {
+@mixin beige-box {
+  background: $kiwi-ruby-beige;
+  border: 1px solid rgba($kiwi-ruby-red, 0.3);
+  box-shadow: $spacing $spacing 0 $kiwi-ruby-red;
+  padding: $spacing;
+
+  // Accounts for the shadow, which causes a bleed beyond the normal spacing
+  margin-right: $spacing;
+}
+
+body, input, textarea, pre {
   color: $kiwi-ruby-red;
   font: 12pt/1.6em Monaco, monospace;
 }
@@ -62,6 +72,17 @@ a {
   }
 }
 
+nav {
+  font-weight: bold;
+  text-align: center;
+
+  a {
+    display: inline-block;
+    font-weight: normal;
+    padding: 0 $spacing;
+  }
+}
+
 footer {
   border-top: 1px dotted #ccc;
   text-align: center;
@@ -81,15 +102,9 @@ input, textarea {
 }
 
 input[type="text"], textarea {
-  background: $kiwi-ruby-beige;
-  border: 1px solid rgba($kiwi-ruby-red, 0.3);
-  box-shadow: $spacing $spacing 0 $kiwi-ruby-red;
-  border-radius: 1px;
+  @include beige-box();
   -webkit-appearance: none;
   appearance: none;
-
-  // Accounts for the shadow, which causes a bleed beyond the normal spacing
-  margin-right: $spacing;
 
   &::placeholder {
     color: $kiwi-ruby-red;
@@ -127,4 +142,18 @@ h1 {
   font-size: 0.8em;
   margin: $spacing $spacing * 2;
   color: $grey;
+}
+
+.submission {
+  @include beige-box;
+  padding: $spacing * 2;
+  margin: $spacing $spacing * 2 $spacing * 2 $spacing;
+
+  .body {
+    margin: 0 0 $spacing;
+  }
+
+  .submitted-by {
+    opacity: 0.5;
+  }
 }

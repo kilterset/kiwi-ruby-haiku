@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>KiwiRubyHaiku</title>
+    <title><%= app_name %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -9,6 +10,18 @@
   </head>
 
   <body>
+    <%= link_to root_url, class: 'header' do %>
+      <%= image_tag 'kiwi-ruby-logo.svg', alt: 'Kiwi Ruby Logo', class: 'kiwi-ruby-logo' %>
+      <span class="app-name"><%= app_name %></span>
+      <%= image_tag 'trineo-logo.svg', alt: 'Trineo Logo', class: 'trineo-logo'  %>
+    <% end %>
+
     <%= yield %>
+
+    <footer>
+      No cookies, no tracking, no third parties.
+      Plain JS like your mum used to make.<br>
+      <%= link_to 'Fix & fork', project_repository_url %>
+    </footer>
   </body>
 </html>

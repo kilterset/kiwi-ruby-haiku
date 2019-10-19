@@ -1,0 +1,130 @@
+$kiwi-ruby-red: #d60a51;
+$kiwi-ruby-beige: #fff9f0;
+$trineo-red: #ba2025;
+$grey: #999;
+$dark-grey: #424242;
+$spacing: 0.5rem;
+
+body, input, textarea {
+  color: $kiwi-ruby-red;
+  font: 12pt/1.6em Monaco, monospace;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  margin: $spacing * 2 auto;
+  max-width: 60rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  padding: $spacing * 2;
+
+  > * {
+    margin: 1em 0 0;
+  }
+}
+
+a {
+  color: $kiwi-ruby-red;
+  text-decoration: none;
+  border-bottom: 1px dotted;
+}
+
+.header {
+  text-decoration: none;
+  padding: $spacing;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  border-style: none;
+
+  img {
+    overflow: hidden;
+    flex: 1;
+  }
+
+  .app-name {
+    font-weight: bold;
+    font-size: 1.2rem;
+    flex: 2;
+  }
+
+  .kiwi-ruby-logo {
+    max-width: 4rem;
+  }
+
+  .trineo-logo {
+    max-width: 8rem;
+  }
+}
+
+footer {
+  border-top: 1px dotted #ccc;
+  text-align: center;
+  color: $grey;
+  font-size: 0.8rem;
+  padding-top: $spacing * 2;
+  margin: $spacing;
+
+  a {
+    color: $dark-grey;
+  }
+}
+
+input, textarea {
+  padding: $spacing;
+  resize: none;
+}
+
+input[type="text"], textarea {
+  background: $kiwi-ruby-beige;
+  border: 1px solid rgba($kiwi-ruby-red, 0.3);
+  box-shadow: $spacing $spacing 0 $kiwi-ruby-red;
+  border-radius: 1px;
+  -webkit-appearance: none;
+  appearance: none;
+
+  // Accounts for the shadow, which causes a bleed beyond the normal spacing
+  margin-right: $spacing;
+
+  &::placeholder {
+    color: $kiwi-ruby-red;
+    opacity: 0.5;
+  }
+}
+
+input[type="submit"] {
+  background: $kiwi-ruby-red;
+  color: white;
+  border-style: none;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+h1, h2 {
+  font-family: Futura, Arial, sans-serif;
+  font-weight: normal;
+  margin: 0;
+}
+
+h1 {
+  font-size: 1.2em;
+}
+
+.confirmation {
+  background: $kiwi-ruby-beige;
+  margin: $spacing;
+  text-align: center;
+  padding: $spacing * 2;
+}
+
+.note {
+  font-size: 0.8em;
+  margin: $spacing $spacing * 2;
+  color: $grey;
+}

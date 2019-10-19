@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>KiwiRubyHaiku</title>
+    <title><%= app_name %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -9,6 +9,12 @@
   </head>
 
   <body>
+    <header>
+      <%= image_tag 'kiwi-ruby-logo.svg', alt: 'Kiwi Ruby Logo', class: 'kiwi-ruby-logo' %>
+      <span class="app-name"><%= app_name %></span>
+      <%= image_tag 'trineo-logo.svg', alt: 'Trineo Logo', class: 'trineo-logo'  %>
+    </header>
+
     <%= yield %>
   </body>
 </html>

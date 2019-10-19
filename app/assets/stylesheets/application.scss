@@ -1,0 +1,74 @@
+$kiwi-ruby-red: #d60a51;
+$kiwi-ruby-beige: #fff9f0;
+$spacing: 0.5rem;
+
+body, input, textarea {
+  color: $kiwi-ruby-red;
+  font: 12pt/1.6em Monaco, monospace;
+}
+
+html, body {
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  padding: $spacing * 2;
+
+  > * {
+    margin: 1em 0;
+  }
+}
+
+header {
+  padding: $spacing;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+
+  .app-name {
+    font-weight: bold;
+    flex: 8;
+  }
+
+  .kiwi-ruby-logo {
+    flex: 2;
+  }
+
+  .trineo-logo {
+    flex: 3;
+  }
+}
+
+input, textarea {
+  padding: $spacing;
+}
+
+input[type="text"], textarea {
+  background: $kiwi-ruby-beige;
+  border-style: none;
+  box-shadow: $spacing $spacing 0 $kiwi-ruby-red;
+}
+
+input[type="submit"] {
+  background: $kiwi-ruby-red;
+  color: white;
+  border-style: none;
+}
+
+h1 {
+  font: 16pt Futura, Arial, sans-serif;
+  margin: 0;
+}
+
+article {
+  margin: $spacing;
+  text-align: center;
+}

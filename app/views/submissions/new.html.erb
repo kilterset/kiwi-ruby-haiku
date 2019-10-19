@@ -1,5 +1,6 @@
 <%= form_for @submission do |f| %>
+  <h1>Submit a new Haiku</h1>
   <%= f.text_field :submitted_by, placeholder: 'Your name or handle' %>
-  <%= f.text_area :body, placeholder: 'Your haiku' %>
+  <%= f.text_area :body, rows: 3, placeholder: 'Your haiku' %>
   <%= f.submit 'Send' %>
 <% end %>

@@ -2,16 +2,21 @@
 
 RSpec.feature 'Submissions' do
   scenario 'Making a submission' do
-    visit '/'
-
-    fill_in 'Your name or handle', with: 'Kobayashi Issa'
-    fill_in 'Your haiku', with: <<~HAIKU
+    submit_haiku <<~HAIKU, by: 'Kobayashi Issa'
       Winter seclusion -
       Listening, that evening,
       To the rain in the mountain.
     HAIKU
 
-    click_on 'Send'
+    expect(page).to have_content('Thank you')
+  end
+
+  scenario 'Making an anonymous submission' do
+    submit_haiku <<~HAIKU
+      Attack ships on fire
+      C-beams glitter in the dark
+      Lost time, like tears in rain
+    HAIKU
 
     expect(page).to have_content('Thank you')
   end

@@ -1,5 +1,12 @@
 <%= form_for @submission do |f| %>
-  <%= f.text_field :submitted_by, placeholder: 'Your name or handle' %>
-  <%= f.text_area :body, placeholder: 'Your haiku' %>
+  <h1>Submit a new Haiku</h1>
+
+  <%= f.text_area :body, rows: 3, placeholder: 'Your haiku' %>
+  <span class="note">Shared publicly.</span>
+
+  <%= f.text_field :submitted_by, placeholder: 'Name or handle (optional)' %>
+
+  <span class="note">Shared publicly. Used for prize giving.</span>
+
   <%= f.submit 'Send' %>
 <% end %>

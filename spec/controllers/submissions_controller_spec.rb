@@ -4,7 +4,11 @@ RSpec.describe SubmissionsController, type: :controller do
   render_views
 
   it 'responds to #new' do
-    get :new
+    expect(get(:new).status).to eq 200
+  end
+
+  it 'responds to #index' do
+    expect(get(:index).status).to eq 200
   end
 
   describe '#create' do

@@ -1,0 +1,7 @@
+<blockquote class="submission">
+  <%= content_tag(:pre, submission.body, class: 'body') %>
+
+  <% if submission.submitted_by? %>
+    <cite class="submitted-by">- <%= submission.submitted_by %></cite>
+  <% end %>
+</blockquote>

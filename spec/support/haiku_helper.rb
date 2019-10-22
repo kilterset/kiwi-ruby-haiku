@@ -8,6 +8,16 @@ helpers = Module.new do
     fill_in 'Your haiku', with: poem
     click_on 'Send'
   end
+
+  def approve_haiku(poem, by: nil)
+    # TEMP this should eventually use admin approve view:
+    submissions = Submission.where(body: poem)
+    submissions = submissions.where(submitted_by: by) if by.present?
+
+    return unless submissions.one?
+
+    submissions.first.update!(status: Submission.statuses[:approved])
+  end
 end
 
 RSpec.configure do |config|

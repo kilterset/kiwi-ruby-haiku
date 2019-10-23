@@ -11,7 +11,7 @@ class SubmissionsController < ApplicationController
   end
 
   def index
-    @submissions = Submission.all.order(created_at: :desc)
+    @submissions = Submission.approved.order(created_at: :desc)
   end
 
   private

@@ -14,7 +14,7 @@ helpers = Module.new do
     submissions = Submission.where(body: poem)
     submissions = submissions.where(submitted_by: by) if by.present?
 
-    return unless submissions.one?
+    raise 'Could not find one haiku matching criteria' unless submissions.one?
 
     submissions.first.update!(status: Submission.statuses[:approved])
   end

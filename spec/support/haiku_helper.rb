@@ -16,7 +16,7 @@ helpers = Module.new do
 
     raise 'Could not find one haiku matching criteria' unless submissions.one?
 
-    submissions.first.update!(status: Submission.statuses[:approved])
+    submissions.first.approved!
   end
 end
 

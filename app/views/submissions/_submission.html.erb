@@ -1,7 +1,16 @@
 <blockquote class="submission">
   <%= content_tag(:pre, submission.body, class: 'body') %>
 
-  <% if submission.submitted_by? %>
-    <cite class="submitted-by">- <%= submission.submitted_by %></cite>
-  <% end %>
+
+  <footer>
+    <% if submission.submitted_by? %>
+      <cite class="submitted-by">- <%= submission.submitted_by %></cite>
+    <% end %>
+
+    <div class="actions">
+      <% if @current_admin.present? %>
+        <%= button_to "Approve", submission_approve_path(submission), method: :patch %>
+      <% end %>
+    </div>
+  </footer>
 </blockquote>

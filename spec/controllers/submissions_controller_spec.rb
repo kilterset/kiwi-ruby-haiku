@@ -34,11 +34,10 @@ RSpec.describe SubmissionsController, type: :controller do
       end
 
       it 'approves a submission' do
-        expect { patch :approve, params: params }.to(
-          change { pending_submission.reload.status }
-            .from(Submission.statuses[:pending])
-            .to(Submission.statuses[:approved])
-        )
+        expect { patch :approve, params: params }
+          .to change { pending_submission.reload.status }
+          .from(Submission.statuses[:pending])
+          .to(Submission.statuses[:approved])
       end
     end
 

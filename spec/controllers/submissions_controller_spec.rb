@@ -25,9 +25,9 @@ RSpec.describe SubmissionsController, type: :controller do
     let(:params) { { submission_id: pending_submission.id } }
 
     context 'with admin authentication' do
-      let(:admin) do
+      let(:admin) {
         Admin.create!(email: 'admin@example.com', password: 'Password1')
-      end
+      }
 
       before do
         http_login(username: admin.email, password: admin.password)

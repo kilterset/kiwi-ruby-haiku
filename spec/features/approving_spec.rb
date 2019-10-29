@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
 RSpec.feature 'Approving' do
-  let(:admin) do
+  let(:admin) {
     Admin.create!(email: 'admin@example.com', password: 'Password1')
-  end
+  }
   let!(:pending_submission) { Submission.create(body: 'Pending haiku') }
-  let!(:approved_submission) do
+  let!(:approved_submission) {
     Submission.approved.create!(body: 'Approved haiku')
-  end
+  }
 
   context 'Authenticated as admin' do
     before do

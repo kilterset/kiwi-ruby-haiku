@@ -6,6 +6,6 @@ module ApplicationHelper
   end
 
   def project_repository_url
-    translate :project_repository_url
+    translate :repository_url
   end
 end

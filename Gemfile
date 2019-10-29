@@ -50,9 +50,6 @@ group :development do
   # Browser simulation
   gem 'capybara'
   gem 'selenium-webdriver'
-
-  # Debugging
-  gem 'pry-rails'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

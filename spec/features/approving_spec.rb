@@ -22,6 +22,7 @@ RSpec.feature 'Approving' do
 
       click_button 'Approve'
 
+      expect(page).to have_content('Submission approved')
       expect(page).not_to have_content('Pending haiku')
     end
   end

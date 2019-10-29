@@ -38,6 +38,20 @@ RSpec.describe SubmissionsController, type: :controller do
           .to change { pending_submission.reload.status }
           .from(Submission.statuses[:pending])
           .to(Submission.statuses[:approved])
+        expect(flash[:notice]).to eq 'Submission approved'
+      end
+
+      context 'approve fails' do
+        before do
+          expect_any_instance_of(Submission)
+            .to receive(:approved!)
+            .and_return(false)
+        end
+
+        it 'shows error flash message' do
+          patch :approve, params: params
+          expect(flash[:error]).to eq 'Failed to approve submission'
+        end
       end
     end
 

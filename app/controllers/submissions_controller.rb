@@ -22,7 +22,7 @@ class SubmissionsController < ApplicationController
     if @submission.approved!
       flash[:notice] = 'Submission approved'
     else
-      flash[:alert] = 'Failed to approve submission'
+      flash[:error] = 'Failed to approve submission'
     end
 
     redirect_to admin_index_path

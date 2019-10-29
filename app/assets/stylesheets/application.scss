@@ -3,6 +3,8 @@ $kiwi-ruby-beige: #fff9f0;
 $trineo-red: #ba2025;
 $grey: #999;
 $dark-grey: #424242;
+$light-blue: #3fa9f5;
+$gold: #f8b133;
 $spacing: 0.5rem;
 
 @mixin beige-box {
@@ -72,6 +74,21 @@ a {
 
   .trineo-logo {
     max-width: 8rem;
+  }
+}
+
+.flash {
+  text-align: center;
+  padding: 10px;
+  margin: 1rem;
+  color: white;
+
+  &.notice {
+    background-color: $light-blue;
+  }
+
+  &.error {
+    background-color: $gold;
   }
 }
 

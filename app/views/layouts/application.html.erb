@@ -15,6 +15,11 @@
       <span class="app-name"><%= app_name %></span>
       <%= image_tag 'trineo-logo.svg', alt: 'Trineo Logo', class: 'trineo-logo' %>
     <% end %>
+    <% flash.each do |type, message| %>
+      <div class="flash <%= type %>">
+        <%= message %>
+      </div>
+    <% end %>
 
     <nav>
       <%= link_to_unless_current "Write", new_submission_path %>

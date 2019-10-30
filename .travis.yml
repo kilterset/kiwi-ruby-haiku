@@ -5,6 +5,10 @@ env:
     - MOZ_HEADLESS=1
 addons:
   firefox: latest
+  apt:
+    packages:
+      - firefox-geckodriver
+
 before_script:
   - psql -c 'create database kiwi_ruby_haiku_test;' -U postgres
 services:

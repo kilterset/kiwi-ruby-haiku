@@ -10,3 +10,20 @@
 
   <%= f.submit 'Send' %>
 <% end %>
+
+<script>
+  // Locally remember the last submitted by value for the session
+  const storage = window.sessionStorage
+
+  if (storage) {
+    const submissionForm = document.querySelector('#new_submission')
+    const submittedByInput = document.querySelector('#submission_submitted_by')
+    const key = 'lastSubmittedBy'
+
+    // Populate submitted by
+    submittedByInput.value = submittedByInput.value || storage.getItem(key)
+
+    // Record submitted by
+    submissionForm.onsubmit = () => storage.setItem(key, submittedByInput.value)
+  }
+</script>

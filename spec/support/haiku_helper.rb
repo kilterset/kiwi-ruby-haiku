@@ -9,14 +9,12 @@ helpers = Module.new do
     click_on 'Send'
   end
 
-  def approve_haiku(poem, by: nil)
-    # TEMP this should eventually use admin approve view:
-    submissions = Submission.where(body: poem)
-    submissions = submissions.where(submitted_by: by) if by.present?
+  def approve_last_pending_haiku
+    submission = Submission.order(created_at: :desc).pending.first
 
-    raise 'Could not find one haiku matching criteria' unless submissions.one?
+    raise 'No more pending haikus' unless submission.present?
 
-    submissions.first.approved!
+    submission.approved!
   end
 end
 

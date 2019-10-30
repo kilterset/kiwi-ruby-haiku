@@ -3,6 +3,8 @@ $kiwi-ruby-beige: #fff9f0;
 $trineo-red: #ba2025;
 $grey: #999;
 $dark-grey: #424242;
+$light-blue: #3fa9f5;
+$gold: #f8b133;
 $spacing: 0.5rem;
 
 @mixin beige-box {
@@ -15,7 +17,10 @@ $spacing: 0.5rem;
   margin-right: $spacing;
 }
 
-body, input, textarea, pre {
+body,
+input,
+textarea,
+pre {
   color: $kiwi-ruby-red;
   font: 12pt/1.6em Monaco, monospace;
 }
@@ -72,6 +77,21 @@ a {
   }
 }
 
+.flash {
+  text-align: center;
+  padding: 1rem;
+  margin: 1rem;
+  color: white;
+
+  &.notice {
+    background-color: $light-blue;
+  }
+
+  &.error {
+    background-color: $gold;
+  }
+}
+
 nav {
   font-weight: bold;
   text-align: center;
@@ -96,12 +116,14 @@ footer {
   }
 }
 
-input, textarea {
+input,
+textarea {
   padding: $spacing;
   resize: none;
 }
 
-input[type="text"], textarea {
+input[type="text"],
+textarea {
   @include beige-box();
   -webkit-appearance: none;
   appearance: none;
@@ -121,7 +143,8 @@ input[type="submit"] {
   appearance: none;
 }
 
-h1, h2 {
+h1,
+h2 {
   font-family: Futura, Arial, sans-serif;
   font-weight: normal;
   margin: 0;
@@ -153,7 +176,15 @@ h1 {
     margin: 0 0 $spacing;
   }
 
-  .submitted-by {
-    opacity: 0.5;
+  footer {
+    border: none;
+    padding: 0;
+    margin: 0;
+
+    .submitted-by {
+      opacity: 0.5;
+      display: block;
+      text-align: left;
+    }
   }
 }

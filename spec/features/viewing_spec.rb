@@ -3,11 +3,12 @@
 RSpec.feature 'Viewing' do
   scenario 'Viewing approved haikus' do
     submit_haiku('Haiku A', by: 'Person A')
-    submit_haiku('Haiku B', by: 'Person B')
-    submit_haiku('Haiku C', by: 'Person C')
+    approve_last_pending_haiku
 
-    approve_haiku('Haiku A', by: 'Person A')
-    approve_haiku('Haiku C', by: 'Person C')
+    submit_haiku('Haiku B', by: 'Person B')
+
+    submit_haiku('Haiku C', by: 'Person C')
+    approve_last_pending_haiku
 
     visit submissions_path
 
